@@ -7,8 +7,7 @@ export const connectDb = async () => {
     connection.on("connected", () => {
       console.log("mongodb connected");
     });
-    connection.on("error", (err) => {
-        
+    connection.on("error", (err) => { 
       console.log("mongodb connection error" + err);
       process.exit();
     });
