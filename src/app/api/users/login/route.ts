@@ -11,7 +11,7 @@ export const POST = async (request: NextRequest) => {
   try {
     const reqBody = await request.json();
     const { email, password } = reqBody;
-    console.log(reqBody);
+   
     if (!email || !password) {
       return NextResponse.json(
         { error: "Please fill all required fields" },
@@ -25,10 +25,10 @@ export const POST = async (request: NextRequest) => {
         { status: 400 }
       );
     }
-    console.log("user exists", user);
+    console.log("user exists from login", user);
 
     // checking password
-    const validPassword = await bcryptjs.compare(password, user.passwod);
+    const validPassword = await bcryptjs.compare(password, user.password);
 
     if (!validPassword) {
       return NextResponse.json(
