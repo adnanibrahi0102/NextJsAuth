@@ -45,7 +45,7 @@ export const POST = async (request: NextRequest) => {
       message:"user registered successfully",
       success:true,
       savedUser
-  })
+  },{status:200})
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
