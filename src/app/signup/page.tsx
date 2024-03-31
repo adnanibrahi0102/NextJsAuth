@@ -43,12 +43,12 @@ const SignUpPage = () => {
       setButtonDisabled(true);
     }
   }, [user]);
-  
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-800">
       <div className="bg-gray-900 shadow-md shadow-emerald-400 rounded-md p-8">
         <h1 className="text-2xl font-bold mb-4 text-center">
-          {loading ? "Processing" : "Signup"}
+          {loading ? "Processing..." : "Signup"}
         </h1>
         <div className="mb-4">
           <label htmlFor="username" className="block mb-1">
@@ -91,6 +91,7 @@ const SignUpPage = () => {
         </div>
         <div className="flex flex-col gap-2 items-center">
           <button
+            disabled={buttonDisabled}
             className="px-4 py-2 bg-gray-700 rounded-md w-full shadow-md shadow-emerald-600 hover:bg-slate-950 "
             onClick={onSignup}
           >
